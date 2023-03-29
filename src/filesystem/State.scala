@@ -5,7 +5,8 @@ import filesystem.files.Directory
 case class State(
                   root:Directory,
                   workdir:Directory,
-                  history:String = ""
+                  history:String = "",
+                  running:Boolean = true,
                 )
 {
   val SHELL_TOKEN = "$ "

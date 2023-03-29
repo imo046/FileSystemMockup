@@ -20,7 +20,7 @@ object FileSystem extends App {
 
 
   //main event loop
-  while (true) {
+  while (s.running) {
     s.show()
     val userInput = scanner.nextLine()
     s = Command.from(userInput).apply(s) //apply new command to a current state, return new updated state
