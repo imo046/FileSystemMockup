@@ -16,9 +16,6 @@ object FileSystem extends App {
   var s = State(root,root)
 
 
-
-
-
   //main event loop
   while (s.running) {
     s.show()

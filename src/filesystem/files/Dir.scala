@@ -6,6 +6,8 @@ abstract class Dir(val parentPath: String, val dirName:String) {
 
   def asDirectory:Directory
 
+  def asFile:File
+
   def getType: String
 
 }

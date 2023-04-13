@@ -1,5 +1,7 @@
 package filesystem.files
 
+import filesystem.TypeException
+
 import scala.annotation.tailrec
 
 //TODO: Use linked list
@@ -43,6 +45,8 @@ class Directory(
   override def asDirectory: Directory = this
 
   override def getType: String = "Directory"
+
+  override def asFile: File = throw new TypeException("Cannot be converted to file!")
 }
 
 object Directory {
@@ -51,6 +55,6 @@ object Directory {
 
   def empty(parentPath: String, name: String): Directory = new Directory(parentPath, name, List())
 
-  def ROOT: Directory = Directory.empty("","")
+  def ROOT: Directory = Directory.empty(ROOT_PATH,"")
 
 }

@@ -15,6 +15,8 @@ object Command {
 
   val MKDIR = "mkdir"
   val LS = "ls"
+  val PWD = "pwd"
+  val TOUCH = "touch"
   val EXIT = "exit"
 
   def emptyCommand = new Command {
@@ -39,6 +41,8 @@ object Command {
       case MKDIR if tokens.length < 2 => incompleteCommand(MKDIR)
       case MKDIR => new MkDir(tokens(1))
       case LS => new Ls
+      case PWD => new Pwd
+      case TOUCH => new Touch(tokens(1))
       case EXIT => exitCommand
       case _ => new UnknownCommand
     }
